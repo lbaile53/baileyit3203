@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<div class="header">
+	<head>
+		<title>Evaluation</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+</div>
+
+<div class="body">
+	<body>
+		<a href="http://ccse.kennesaw.edu/it">
+			<img class="resize" src="https://www.drupal.org/files/KSU%20Mountain%20Logo.png" alt="logo">
+		</a>
+		<h1>Center for Applied Research in Information Technology</h1>
+		<div class="topnav">
+			<a class="active" href="index.html">Home</a>
+			<a href="About.html">About</a>
+			<a href="Resources.html">Resources</a>
+			<a href="evaluation.html">Evaluation</a>
+		</div>
+		<h1>Student Assistant Positions</h1>
+		<p1>
+			The CARIT is a research center at Kennesaw State University for the College of Computer Science and Engineering.
+			The purpose of the CARIT is to provide quality research for the community, staff, and students. The CARIT is currently
+			hiring student assistants to help out. There are 4 positions that are available. To be considered for a position,
+			there are some required courses and a minimum average grade requirement. Fill out the evaluation below to see if you qualify.
+		</p1><br />
+		<head>
+			
+			<script type="text/javascript">function displayCourse() {
+
+					var status = document.getElementById('status').value;
+
+					if (status == 'Undergraduate') {
+						var option1 = document.getElementById('option1');
+						option1.style.display = "block";
+
+						var option2 = document.getElementById('option2');
+						option2.style.display = "none";
+
+					}
+
+					else {
+						var option1 = document.getElementById('option1');
+						option1.style.display = "none";
+
+						var option2 = document.getElementById('option2');
+						option2.style.display = "block";
+
+					}
+				}
+
+				function convertnumeric(grade) {
+
+					if (grade == 'Grade A') {
+						return 4.0;
+					}
+					else if (grade == 'Grade B') {
+						return 3.0;
+					}
+					else if (grade == 'Grade C') {
+						return 3.0;
+					}
+					else if (grade == 'Grade D') {
+						return 2.0;
+					}
+					else {
+						return 0;
+					}
+				}
+
+				function Cal_Avg() {
+
+					var status = document.getElementById('status').value;
+					if (status == 'Undergraduate') {
+						var course1 = document.getElementById("ugcourse1Grade").value;
+						var grade1 = convertnumeric(course1);
+						var course2 = document.getElementById("ugcourse2Grade").value;
+						var grade2 = convertnumeric(course2);
+						var course3 = document.getElementById("ugcourse3Grade").value;
+						var grade3 = convertnumeric(course3);
+						var course4 = document.getElementById("ugcourse4Grade").value;
+						var grade4 = convertnumeric(course4);
+						var average = (grade1 + grade2 + grade3 + grade4) / 4;
+						var message = "<p>Your GPA is: " + average + "</p>";
+						document.getElementById("gpa").innerHTML = message;
+
+						if (average < 3.2) {
+							document.getElementById("result").innerHTML = 'Sadly, you do not meet the requirements and are not eligible to apply.';
+						}
+						else {
+							document.getElementById("result").innerHTML = 'Congratulations! You may apply using the link below.</br><a href= "https://kennesaw.joinhandshake.com/login"><b>Application</b>';
+						}
+					}
+
+					else if (status =='Graduate') {
+
+						var course1 = document.getElementById("gcourse1Grade").value;
+						var grade1 = convertnumeric(course1);
+						var course2 = document.getElementById("gcourse2Grade").value;
+						var grade2 = convertnumeric(course2);
+						var course3 = document.getElementById("gcourse3Grade").value;
+						var grade3 = convertnumeric(course3);
+						var course4 = document.getElementById("gcourse4Grade").value;
+						var grade4 = convertnumeric(course4);
+						var average = (grade1 + grade2 + grade3 + grade4) / 4;
+						var message = "<p>Your GPA is: " + average + "</p>";
+						document.getElementById("gpa").innerHTML = message;
+
+
+						if (average < 3.7) {
+							document.getElementById("result").innerHTML = 'Sadly, you do not meet the requirements and are not eligible to apply.';
+						}
+						else {
+							document.getElementById("result").innerHTML = 'Congratulations! You may apply using the link below.</br><a href= "https://kennesaw.joinhandshake.com/login"><b>Application</b>';
+						}
+					}
+
+				}
+			</script>
+		</head>
+		<article>
+
+			<h3>Please start by selecting your status. Proceed to enter your grades for the listed courses and click the evaluate button to see  if you qualify for one of the positions.  </h3>
+			<p>
+				<b>Student Status: </b>
+				<select name="select_status" id="status" onchange="displayCourse()">
+					<option selected> Select </option>
+					<option> Undergraduate </option>
+					<option> Graduate </option>
+				</select>
+			</p>
+
+			<p><form id="option1"><b>Undergraduate</b></p>
+			Course 1 <input type="text" id="Course1" value="CSE 3203 Mobile System Overview" size="50">
+			<select id="ugcourse1Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+
+			Course 2 <input type="text" id="Course2" value="IT 4213 Mobile Web Development" size="50">
+			<select id="ugcourse2Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+
+			Course 3 <input type="text" id="Course3" value="IT 4153 Advanced Database" size="50">
+			<select id="ugcourse3Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+
+			Course 4 <input type="text" id="Course4" value="IT 4713 BI Systems" size="50">
+			<select id="ugcourse4Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+			</form></p>
+
+
+			<p><form id="option2"><b>Graduate</b></p>
+			Course 1 <input type="text" id="Course1" value="IT 6203 IT Design Studio" size="50">
+			<select id="gcourse1Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+
+			Course 2 <input type="text" id="Course2" value="IT 6753 Advanced Web" size="50">
+			<select id="gcourse2Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+
+			Course 3 <input type="text" id="Course3" value="IT 6713 Business Intelligence" size="50">
+			<select id="gcourse3Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+
+			Course 4 <input type="text" id="Course4" value="IT 7113 Data Visualization" size="50">
+			<select id="gcourse4Grade">
+				<option> Grade A </option>
+				<option> Grade B </option>
+				<option> Grade C </option>
+				<option> Grade D </option>
+				<option> Grade F </option>
+			</select> <br>
+			</form> </p>
+		</article>
+
+		<script>
+			var option1 = document.getElementById('option1');
+			option1.style.display = "none";
+
+			var option2 = document.getElementById('option2');
+			option2.style.display = "none";</script>
+
+
+		<article>
+			<p><b>See if you qualify: </b><input type="button" value="Evaluate" onclick="Cal_Avg()" /></p></br>
+			<p id="gpa"></p>
+			<div id="result"></div>
+			</br>
+		</article>
+
+
+	</body>
+
+</html>
+
